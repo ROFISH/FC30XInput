@@ -38,9 +38,13 @@ namespace SFC30XInput
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
+            this.msTimeBox = new System.Windows.Forms.TextBox();
+            this.ms = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +123,16 @@ namespace SFC30XInput
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Face Buttons";
             // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(7, 42);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(200, 17);
+            this.radioButton4.TabIndex = 1;
+            this.radioButton4.Text = "Xinput Location (Swap A/B and X/Y)";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
@@ -131,16 +145,6 @@ namespace SFC30XInput
             this.radioButton3.Text = "As Labeled";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(7, 42);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(200, 17);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.Text = "Xinput Location (Swap A/B and X/Y)";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(75, 260);
@@ -151,11 +155,51 @@ namespace SFC30XInput
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // msTimeBox
+            // 
+            this.msTimeBox.Location = new System.Drawing.Point(308, 58);
+            this.msTimeBox.Name = "msTimeBox";
+            this.msTimeBox.Size = new System.Drawing.Size(88, 20);
+            this.msTimeBox.TabIndex = 9;
+            this.msTimeBox.Text = "1";
+            this.msTimeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // ms
+            // 
+            this.ms.AutoSize = true;
+            this.ms.Location = new System.Drawing.Point(399, 61);
+            this.ms.Name = "ms";
+            this.ms.Size = new System.Drawing.Size(20, 13);
+            this.ms.TabIndex = 10;
+            this.ms.Text = "ms";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(308, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Sleep Timing:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(308, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Hint: 16ms = 60hz";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 295);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ms);
+            this.Controls.Add(this.msTimeBox);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -173,6 +217,7 @@ namespace SFC30XInput
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -188,6 +233,10 @@ namespace SFC30XInput
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox msTimeBox;
+        private System.Windows.Forms.Label ms;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

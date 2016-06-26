@@ -29,6 +29,8 @@ namespace SFC30XInput
         Thread updateThread;
         byte[] xinputData = new byte[28];
 
+        int waitTime = 16;
+
         bool xinput_as_dpad;
         bool xinput_as_360_buttons;
 
@@ -203,6 +205,7 @@ namespace SFC30XInput
             groupBox1.Enabled = true;
             groupBox2.Enabled = true;
             button3.Enabled = true;
+            msTimeBox.Enabled = true;
             button2.Text = "Start Xinput Emulation";
         }
 
@@ -235,7 +238,10 @@ namespace SFC30XInput
             groupBox1.Enabled = false;
             groupBox2.Enabled = false;
             button3.Enabled = false;
+            msTimeBox.Enabled = false;
             button2.Text = "Stop Xinput Emulation";
+
+            waitTime = Int32.Parse(msTimeBox.Text);
 
             if (x360Bus.Open() && x360Bus.Start())
             {
@@ -472,6 +478,11 @@ namespace SFC30XInput
 
                 UpdateXinputData();
                 x360Bus.Report(xinputData, Rumble);
+
+                if (waitTime > 0)
+                {
+                    Thread.Sleep(waitTime);
+                }
 
                 //Console.WriteLine(lastState.ToString());
             }
